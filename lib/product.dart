@@ -109,7 +109,7 @@ class _ProductPage extends State<ProductPage> {
                         countItem(),
                         SizedBox(
                           child: Padding(
-                            padding: EdgeInsets.all(50.0),
+                            padding: EdgeInsets.all(40.0),
                           ),
                         ),
                         nextButton()
@@ -123,6 +123,7 @@ class _ProductPage extends State<ProductPage> {
         ));
   }
 
+
   Widget countItem() {
     return Form(
       key: _formKey,
@@ -130,30 +131,42 @@ class _ProductPage extends State<ProductPage> {
           child: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(top: 5.0,left: 15.0,right: 15.0),
+            padding: EdgeInsets.all(15.0),
+            child: Text(
+              'Our Flavour',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          Container(
+            alignment: Alignment.topLeft,
+            padding: EdgeInsets.only(top: 5.0,right: 15.0),
             child: Text(
               'ORIGINAL',
               style: TextStyle(
-                  backgroundColor: HexColor("#fdc124"),
+                  color: Colors.white,
                   fontSize: 26,
                   fontWeight: FontWeight.bold),
             ),
           ),
           Container(
+            alignment: Alignment.topLeft,
             child: Text(
               'KARAMEL',
               style: TextStyle(
-                  backgroundColor: HexColor("#fdc124"),
+                  color: Colors.white,
                   fontSize: 26,
                   fontWeight: FontWeight.bold),
             ),
           ),
           Container(
+          alignment: Alignment.topLeft,
             padding: EdgeInsets.only(bottom: 50.0),
             child: Text(
-              'COKLATE',
-              style: TextStyle(
-                  backgroundColor: HexColor("#fdc124"),
+              'COKLAT',
+              style: TextStyle(color: Colors.white,
                   fontSize: 26,
                   fontWeight: FontWeight.bold),
             ),
