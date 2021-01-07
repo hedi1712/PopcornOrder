@@ -3,19 +3,18 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:submission_flutter_pemula/product.dart';
 
 class RegistrationModel {
-  
   String name;
   String address;
   String phoneNumber;
   String email;
   String flavour;
+  String jumlah;
 
-  RegistrationModel(this.name, this.address, this.phoneNumber, this.email);
+  RegistrationModel(this.name, this.address, this.phoneNumber, this.email,
+      this.flavour, this.jumlah);
 }
 
 class BuyerProfile extends StatefulWidget {
-
-
   @override
   _BuyerProfileState createState() => _BuyerProfileState();
 }
@@ -27,6 +26,8 @@ class _BuyerProfileState extends State<BuyerProfile> {
   String address;
   String phoneNumber;
   String email;
+  String flavour;
+  String jumlah;
 
   @override
   Widget build(BuildContext context) {
@@ -130,10 +131,11 @@ class _BuyerProfileState extends State<BuyerProfile> {
             validator: (value) {
               if (value.isEmpty) {
                 return 'Form Name Kosong';
-              } return null;
+              }
+              return null;
             },
             onSaved: (value) {
-                name = value;
+              name = value;
             },
             decoration: InputDecoration(
                 border: InputBorder.none,
@@ -159,7 +161,8 @@ class _BuyerProfileState extends State<BuyerProfile> {
             validator: (value) {
               if (value.isEmpty) {
                 return 'Form Address Kosong';
-              } return  null;
+              }
+              return null;
             },
             onSaved: (value) {
               address = value;
@@ -187,7 +190,8 @@ class _BuyerProfileState extends State<BuyerProfile> {
             validator: (value) {
               if (value.isEmpty) {
                 return 'Form Phone Number Kosong';
-              } return null;
+              }
+              return null;
             },
             onSaved: (value) {
               phoneNumber = value;
@@ -217,7 +221,7 @@ class _BuyerProfileState extends State<BuyerProfile> {
               if (value.isEmpty) {
                 return 'Form Email Kosong';
               }
-                return null;
+              return null;
             },
             onSaved: (value) {
               email = value;
@@ -256,8 +260,8 @@ class _BuyerProfileState extends State<BuyerProfile> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => ProductPage(
-                        registrationModel: RegistrationModel(
-                            name, address, phoneNumber, email))));
+                        registrationModel: RegistrationModel(name, address,
+                            phoneNumber, email, flavour, jumlah))));
           }
         },
       ),
